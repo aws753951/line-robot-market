@@ -4,3 +4,4 @@ flask
 pymongo[srv]
 requests
 beautifulsoup4
+selenium
