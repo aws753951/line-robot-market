@@ -1,0 +1,6 @@
+line-bot-sdk
+gunicorn
+flask
+pymongo[srv]
+requests
+BeautifulSoup
