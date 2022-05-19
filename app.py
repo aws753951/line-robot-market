@@ -24,6 +24,23 @@ YOUR_CHANNEL_SECRET = '2e1037f03f3f69dfba07efbf5083b3b7'
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
+import threading
+import requests
+import time
+
+def wakeup():
+    while True:
+        url = 'https://line-robot-market.herokuapp.com/' + 'heroku_wake_up'
+        res = requests.get(url)
+        if res.status_code == 200:
+            print('200')
+        else:
+            pass
+        time.sleep(28*60)
+
+threading.Thread(target=wakeup).start()
+        
+
 
 body = None
 @app.route("/callback", methods=['POST'])
