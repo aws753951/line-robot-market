@@ -2,7 +2,12 @@ from selenium import webdriver
 import os 
 
 def futu_news():
-    driver = webdriver.Chrome('chromedriver.exe')
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.getenv('GOOGLE_CHROME_BIN',None)
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    driver = webdriver.Chrome(executable_path=os.getenv('CHROMEDRIVER_PATH',None), chrome_options=chrome_options)
     driver.get('https://news.futunn.com/hk/main?lang=zh-hk')
     driver.maximize_window()
     titles = driver.find_elements_by_class_name('news-title')[:10]
@@ -14,7 +19,12 @@ def futu_news():
     return str(news)
 
 def futu_news_us():
-    driver = webdriver.Chrome('chromedriver.exe')
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.getenv('GOOGLE_CHROME_BIN',None)
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    driver = webdriver.Chrome(executable_path=os.getenv('CHROMEDRIVER_PATH',None), chrome_options=chrome_options)
     driver.get('https://news.futunn.com/hk/main?lang=en-US')
     driver.maximize_window()
     titles = driver.find_elements_by_class_name('news-title')[:10]
