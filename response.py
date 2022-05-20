@@ -6,53 +6,30 @@ def buttons_total():
         template=ButtonsTemplate(
             thumbnail_image_url="https://generisonline.com/wp-content/uploads/2022/04/MarketingResources_Thumbnail_Search.width-1200.jpg",
             title="目前僅開放以下功能",
-            text="也可以直接輸入關鍵字「經濟數據」、「籌碼」、「新聞」",
+            text="也可以直接輸入關鍵字「Fed」、「經濟數據」、「市場新聞」、「油土伯」、「其他」",
             actions=[
                 PostbackTemplateAction(
-                    label="美國經濟數據",
+                    label="最新有關聯準會的新聞",
+                    data='t&news'
+                ),
+                PostbackTemplateAction(
+                    label="美國重要經濟數據",
                     data='t&econs'
                 ),
                 PostbackTemplateAction(
-                    label="大佬籌碼資料",
-                    data='t&chips'
+                    label="其他市場新聞",
+                    data='t&futunews'
                 ),
                 PostbackTemplateAction(
-                    label="最新新聞(請給我30秒)",
-                    data='t&news'
+                    label="最新股市博主講了啥",
+                    data='t&youtube'
                 ),
             ]
         )
     )
     return message
 
-def buttons_chips():
-    message = TemplateSendMessage(
-        alt_text='想查詢哪位大佬近期交易狀況呢?',
-        template=ButtonsTemplate(
-            thumbnail_image_url="https://cdn2.ettoday.net/images/2689/2689375.jpg",
-            title="你可能會想知道以下幾位",
-            text="註:僅限有向13Filings申報",
-            actions=[
-                PostbackTemplateAction(
-                    label="Warren Buffet",
-                    data="c&Warren Buffet"
-                ),
-                PostbackTemplateAction(
-                    label="Chase Coleman",
-                    data="c&Chase Coleman"
-                ),
-                PostbackTemplateAction(
-                    label="Bill Ackman",
-                    data="c&Bill Ackman"
-                ),
-                PostbackTemplateAction(
-                    label="我自行輸入",
-                    data="c&wait"
-                )
-            ]
-        )
-    )
-    return message
+
 
 def buttons_econs():
     message = TemplateSendMessage(
@@ -78,6 +55,44 @@ def buttons_econs():
                     label="我不依我不依，我自己找",
                     data="e&gofind"
                 ),
+            ]
+        )
+    )
+    return message
+
+def other():
+    message = TemplateSendMessage(
+        alt_text='其他市場資訊',
+        template=ImageCarouselTemplate(
+            columns=[
+                ImageCarouselColumn(
+                    image_url="https://i.imgur.com/1e40FmU.png",
+                    action=URITemplateAction(
+                        label="今天的股市是漲還是跌呢?",
+                        uri="https://finviz.com/map.ashx"
+                    )
+                ),
+                ImageCarouselColumn(
+                    image_url="https://i.imgur.com/xbEwmxR.jpg",
+                    action=URITemplateAction(
+                        label="機構大佬們近期交易狀況?",
+                        uri="https://dataroma.com/m/home.php"
+                    )
+                ),
+                ImageCarouselColumn(
+                    image_url="https://i.imgur.com/ZQVJ9Tm.jpg",
+                    action=URITemplateAction(
+                        label="fed的記者會又說了啥?",
+                        uri="https://www.federalreserve.gov/newsevents/pressreleases.htm"
+                    )
+                ),
+                ImageCarouselColumn(
+                    image_url="https://i.imgur.com/Gx7toTB.jpg",
+                    action=URITemplateAction(
+                        label="近期的恐慌指數到哪呢了?",
+                        uri="https://edition.cnn.com/markets/fear-and-greed"
+                    )
+                )
             ]
         )
     )
