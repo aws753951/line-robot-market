@@ -2,7 +2,7 @@ import pymongo
 import json
 from datetime import datetime
 
-mongodb_url = "mongodb+srv://marczhu:123456a@cluster0.r6vhy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
 
 client = pymongo.MongoClient(mongodb_url)
 coll = client.linedatabases.eventcollection

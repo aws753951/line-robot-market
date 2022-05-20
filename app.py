@@ -18,9 +18,6 @@ from fed import *
 from youtube import *
 
 
-YOUR_CHANNEL_ACCESS_TOKEN = '+Qnngs1qVk30BNjSm7loQkaIgAh3fqks4ztR/AvWU7cLwJgkgUdLxJWWkz5HO/yBkqlc34NDfuYDfJAnZEJHJDR9zSCcg7SNZmsKLGuhQUY5axVYKkdrsH51f46WfIDWsVW/l8F5yZitJqhpRv9fuAdB04t89/1O/w1cDnyilFU='
-YOUR_CHANNEL_SECRET = '2e1037f03f3f69dfba07efbf5083b3b7'
-
 
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
