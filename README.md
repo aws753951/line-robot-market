@@ -1,3 +1,7 @@
+![image](https://user-images.githubusercontent.com/101057598/169508175-de1b0e95-259b-4e32-a8f2-e8ae9ae0a02a.png)<br>
+
+歡迎各位掃描上方qrcode，此為我針對市場蒐集素材做成的line機器人<br>
+
 line 聊天機器人
 ===
 需要用到line developers console 與heroku 還有mongodb <br>
