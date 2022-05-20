@@ -22,29 +22,11 @@ webdriver等相關使用selenium時會用到的工具，於heroku後台設定環
 ![image](https://user-images.githubusercontent.com/101057598/169499362-9e33ab2e-7ff1-4a7b-81b0-243fcd44ad9a.png)
 ![image](https://user-images.githubusercontent.com/101057598/169499389-073a04d8-4feb-4065-b36f-5f1b74917763.png)
 於使用selenium的程式碼內，換上以下的code (此專案為futu.py/ youtube.py 有用到)<br>
- import os<br>
- chrome_options = webdriver.ChromeOptions()<br>
- chrome_options.binary_location = os.getenv('GOOGLE_CHROME_BIN',None)<br>
- chrome_options.add_argument('--headless')<br>
- chrome_options.add_argument('--disable-gpu')<br>
- chrome_options.add_argument('--no-sandbox')<br>
- driver = webdriver.Chrome(executable_path=os.getenv('CHROMEDRIVER_PATH',None), chrome_options=chrome_options)<br>
+![image](https://user-images.githubusercontent.com/101057598/169506465-76bee7a8-e60a-4ab3-a9b8-bde7e74e966a.png)
  ### 使heroku不睡著
  於youtuber maso0310內有說明<br>
  Note: 在本地上運行此招會盪，當要上傳至heroku時在貼相關程式碼<br>
-import threading<br>
-import requests<br>
-import time<br>
-def wakeup():<br>
-    while True:<br>
-        url = 'https://line-robot-market.herokuapp.com/' + 'heroku_wake_up'<br>
-        res = requests.get(url)<br>
-        if res.status_code == 200:<br>
-            print('200')<br>
-        else:<br>
-            pass<br>
-        time.sleep(28*60)<br>
-threading.Thread(target=wakeup).start()<br>
+![image](https://user-images.githubusercontent.com/101057598/169506371-63f058ad-69fe-4e19-b215-a8a14d895864.png)
  ### 留言蒐集至mongodb
  於youtuber maso0310內有說明<br>
  Note: 其code有誤，其write_one_data()中間不能加入eval()，會出現錯誤<br>
@@ -66,4 +48,23 @@ threading.Thread(target=wakeup).start()<br>
  ### 此專案要爬的相關網站
  基本上都是跟市場有關的資訊<br>
  跟聯準會有關的新聞(外國新聞更新速度較快)<br>
- https://api.queryly.com/cnbc/json.aspx?queryly_key=31a35d40a9a64ab3&query=fed&endindex=0&batchsize=10&callback=&showfaceted=false&timezoneoffset=-480&facetedfields=formats&facetedkey=formats%7C&facetedvalue=!Press%20Release%7C&needtoptickers=1&additionalindexes=4cd6f71fbf22424d,937d600b0d0d4e23,3bfbe40caee7443e,626fdfcd96444f28
+ https://api.queryly.com/cnbc/json.aspx?queryly_key=31a35d40a9a64ab3&query=fed&endindex=0&batchsize=10&callback=&showfaceted=false&timezoneoffset=-480&facetedfields=formats&facetedkey=formats%7C&facetedvalue=!Press%20Release%7C&needtoptickers=1&additionalindexes=4cd6f71fbf22424d,937d600b0d0d4e23,3bfbe40caee7443e,626fdfcd96444f28<br>
+ 市場最新新聞(富途牛牛為中文新聞內最好的平台)<br>
+ https://news.futunn.com/hk/main?lang=zh-hk<br>
+ 經濟數據(串接investing.com的初步資料跟美國經濟數據公布的官網)(美國公布的經濟數據官網為原始資料，內含相關解說以及更細的資料)<br>
+ https://www.investing.com/economic-calendar/gdp-375<br>
+ https://www.bea.gov/data/gdp/gross-domestic-product<br>
+ https://www.census.gov/retail/index.html<br>
+ https://www.bls.gov/news.release/cpi.nr0.htm<br>
+ 觀察每日股市區域板塊<br>
+ https://finviz.com/map.ashx<br>
+ 籌碼資料<br>
+ https://dataroma.com/m/home.php<br>
+ 聯準會記者會說明<br>
+ https://www.federalreserve.gov/newsevents/pressreleases.htm<br>
+ 恐慌指數<br>
+ https://edition.cnn.com/markets/fear-and-greed<br>
+ 外加兩位針對股市變化進行講解的youtuber<br>
+ nana說美股 / 陽光財經<br>
+ 
+ 
