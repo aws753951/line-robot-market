@@ -17,11 +17,11 @@ def buttons_total():
                     data='t&econs'
                 ),
                 PostbackTemplateAction(
-                    label="其他市場新聞",
+                    label="其他市場新聞(須稍等)",
                     data='t&futunews'
                 ),
                 PostbackTemplateAction(
-                    label="最新股市博主講了啥",
+                    label="最新股市博主講了啥(須稍等)",
                     data='t&youtube'
                 ),
             ]
