@@ -38,7 +38,7 @@ webdriver等相關使用selenium時會用到的工具，於heroku後台設定環
  dict = json.loads(body) 參考(mongodb_func.py)
  ##### 附加功能
  原先寫入mongodb的資料內無特別轉換成姓名以及我要的資訊，為了方便於資料庫內查看每則留言為誰、以及時間為何，此處調整其寫入方法<br>
- 1. gobal body，把body偷渡出來，在我想要的時候才寫入→於使用者打入訊息時寫入，可調整<br>
+ 1. gobal body，把body偷渡出來，於使用者打入訊息時寫入。後來發現寫在callback內會更好，畢竟有時候使用者會是透過postback的方式回傳訊息<br>
  2. 由於body被偷渡出來後，可以無視get_group_member_profile()，能抓到body內個人uid就可知道其名字→使用get_profile()<br>
  ![image](https://user-images.githubusercontent.com/101057598/169505722-da6ef391-afc7-4cdd-a245-6ec18f11b073.png)
 ![image](https://user-images.githubusercontent.com/101057598/169505755-8a15a7df-98c8-4fd2-936d-e541930d8e90.png)
