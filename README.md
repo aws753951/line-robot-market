@@ -19,7 +19,7 @@ Note:在使用mongodb的連結時，得新增第二個使用者，其連結才�
 於youtuber maso0310內有說明<br>
 ngrok<br>
 Note:在使用時須注意檔案是否已經運行(雙cmd)，LINE上的verify才會成功<br>
-Note:不用先上傳至heroku，也可以運行，須注意安裝檔很多時候都已經安裝了，所以網域在主機上時可正常運行，但至heroku卻無法，requirements.txt要加上去，版本問題也要注意<br>
+Note:不用先上傳至heroku，也可以運行，須注意套件問題，由於ngrok的功能是讓運行的主機回到本地上，所以如果電腦已經安裝相關套件，但至heroku不見得可以，得透過requirements.txt加回去讓heroku知道要安裝那些套件才行，版本問題也要注意<br>
 ### 虛擬環境應用
 於heroku無法使用dotenv等環境變數<br>
 webdriver等相關使用selenium時會用到的工具，於heroku後台設定環境變數<br>
